@@ -31,6 +31,3 @@ clearMagazineCargoGlobal _box;
 	_box addWeaponCargoGlobal [_x, _amount]; 
 }
 foreach _radios;
-
-
-if (true) exitWith {};
