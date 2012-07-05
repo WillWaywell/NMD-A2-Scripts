@@ -27,7 +27,5 @@ clearWeaponCargoGlobal _box;
 clearMagazineCargoGlobal _box;
 			
 // Add Cargo
-{ 
-	_box addWeaponCargoGlobal [_x, _amount]; 
-}
+{ _box addWeaponCargoGlobal [_x, _amount]; }
 foreach _radios;

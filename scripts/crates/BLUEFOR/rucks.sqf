@@ -1,7 +1,7 @@
 /*
 + ----------------------------------------------------------------------------+
 |	File: rucks.sqf
-|	Script: if (isServer) then { null = [this,40] execVM "rucks.sqf"; };
+|	Init: if (isServer) then { null = [this,40] execVM "rucks.sqf"; };
 |	Args: <(object)crate> [(int)ruck count]
 |
 |	Author: Hawk
@@ -26,7 +26,5 @@ clearWeaponCargoGlobal _box;
 clearMagazineCargoGlobal _box;
 				
 // Add Cargo				
-{ 
-	_box addWeaponCargoGlobal [_x, _amount]; 
-}
+{ _box addWeaponCargoGlobal [_x, _amount]; }
 foreach _rucks;
