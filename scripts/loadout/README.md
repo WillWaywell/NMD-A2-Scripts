@@ -1,4 +1,4 @@
-<h1>Readme</h1>
+<h1>Readme: Loadout</h1>
 <p>Loadout script supports:</p>
 <ul>
 	<li>ACE Wounds</li>
