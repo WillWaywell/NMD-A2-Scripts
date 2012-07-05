@@ -11,11 +11,11 @@
 */
 
 // Arguments
-_box 		= _this select 0;
+_crate 		= _this select 0;
 _amount 	= if (count _this > 1) then {_this select 1} else {40};
 
 // Create Array(s)
-_misc_w =	[
+_weapons = [
 "ACE_Kestrel4500",
 "ACE_DAGR",
 "ACE_Map_Tools",
@@ -42,7 +42,7 @@ _misc_w =	[
 "ACE_GlassesGasMask_US"
 ];
 
-_misc_m =	[
+_magazines = [
 "IR_Strobe_Marker",
 "IR_Strobe_Target",
 "Laserbatteries",
@@ -50,12 +50,13 @@ _misc_m =	[
 ];
 	
 // Clear Current Cargo
-clearWeaponCargoGlobal _box; 
-clearMagazineCargoGlobal _box;
+clearWeaponCargoGlobal _crate; 
+clearMagazineCargoGlobal _crate;
+clearBackpackCargoGlobal _crate;
 				
 // Add Cargo				
-{ _box addWeaponCargoGlobal [_x, _amount]; }
-foreach _misc_w;
+{ _crate addWeaponCargoGlobal [_x, _amount]; }
+foreach _weapons;
 			
-{ _box addMagazineCargoGlobal [_x, _amount]; }
-foreach _misc_m;
+{ _crate addMagazineCargoGlobal [_x, _amount]; }
+foreach _magazines;

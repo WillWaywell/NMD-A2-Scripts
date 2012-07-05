@@ -11,10 +11,9 @@
 */
 
 // Arguments
-_box 		= _this select 0;
+_crate 		= _this select 0;
 _amount 	= if (count _this > 1) then {_this select 1} else {100};
 _sbAmmo 	= if (count _this > 2) then {_this select 2} else {true};
-
 
 // Create Array(s)
 _magazines = [ 
@@ -108,8 +107,9 @@ _magazines_sb = [
 ];
 	
 // Clear Current Cargo
-clearWeaponCargoGlobal _box; 
-clearMagazineCargoGlobal _box;
+clearWeaponCargoGlobal _crate; 
+clearMagazineCargoGlobal _crate;
+clearBackpackCargoGlobal _crate;
 			
 // Add Cargo
 { _crate addMagazineCargoGlobal [_x, _amount]; }

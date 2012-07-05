@@ -11,16 +11,16 @@
 */
 
 // Arguments
-_box 		= _this select 0;
+_crate 		= _this select 0;
 _amountw 	= if (count _this > 1) then {_this select 1} else {10};
 _amountm 	= if (count _this > 2) then {_this select 2} else {40};
 
 // Create Array(s)
-_ordnance_w =	[
+_weapons = [
 "ACE_Minedetector_US"
 ];
 
-_ordnance_m =	[
+_magazines = [
 "SmokeShell",
 "SmokeShellBlue",
 "SmokeShellGreen",
@@ -75,12 +75,13 @@ _ordnance_m =	[
 ];
 
 // Clear Current Cargo
-clearWeaponCargoGlobal _box; 
-clearMagazineCargoGlobal _box;
+clearWeaponCargoGlobal _crate; 
+clearMagazineCargoGlobal _crate;
+clearBackpackCargoGlobal _crate;
 				
 // Add Cargo
-{ _box addWeaponCargoGlobal [_x, _amountw]; }
-foreach _ordnance_w;
+{ _crate addWeaponCargoGlobal [_x, _amountw]; }
+foreach _weapons;
 				
-{ _box addMagazineCargoGlobal [_x, _amountm]; }
-foreach _ordnance_m;
+{ _crate addMagazineCargoGlobal [_x, _amountm]; }
+foreach _magazines;

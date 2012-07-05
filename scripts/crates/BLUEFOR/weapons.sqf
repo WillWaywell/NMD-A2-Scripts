@@ -16,12 +16,10 @@ _amountw 	= if (count _this > 1) then {_this select 1} else {40};
 _amountm 	= if (count _this > 2) then {_this select 2} else {100};
 _sbAmmo 	= if (count _this > 3) then {_this select 3} else {true};
 
-
 // Create Array(s)
-_weapons =	[
+_weapons = [
 
 // Automatic Rifles
-
 "ACE_M249_AIM",
 "ACE_M249_PIP_ACOG",
 "ACE_MG36",
@@ -36,7 +34,6 @@ _weapons =	[
 "MG36_camo",
 
 // Machine Guns
-
 "ACE_BAF_L7A2_GPMG",
 "ACE_M240B",
 "ACE_M240L",
@@ -50,7 +47,6 @@ _weapons =	[
 "Mk_48_DES_EP1",
 
 // Pistols
-
 "ACE_Glock18",
 "ACE_L9A1",
 "ACE_P226",
@@ -66,7 +62,6 @@ _weapons =	[
 "UZI_SD_EP1",
 
 // Rifles
-
 "AA12_PMC",
 "ACE_G36A1_AG36A1",
 "ACE_G36A1_AG36A1_D",
@@ -224,7 +219,6 @@ _weapons =	[
 "SCAR_L_STD_Mk4CQT",
 
 // Snipers
-
 "ACE_AS50",
 "ACE_M109",
 "ACE_M110",
@@ -243,7 +237,6 @@ _weapons =	[
 "M24",
 "M24_des_EP1",
 "M40A3",
-"PMC_AS50_scoped",
 "SVD",
 "SVD_CAMO",
 "SVD_des_EP1",
@@ -344,6 +337,7 @@ _magazines_sb = [
 // Clear Current Cargo
 clearWeaponCargoGlobal _crate; 
 clearMagazineCargoGlobal _crate;
+clearBackpackCargoGlobal _crate;
 			
 // Add Cargo
 { _crate addWeaponCargoGlobal [_x, _amountw]; }

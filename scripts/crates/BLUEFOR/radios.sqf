@@ -2,7 +2,7 @@
 + ----------------------------------------------------------------------------+
 |	File: radios.sqf
 |	Init: if (isServer) then { null = [this,30] execVM "radios.sqf"; };
-|	Args: <(object)crate> [(int)radio count]
+|	Args: <(object)crate> [(int)weapon count]
 |
 |	Author: Hawk
 |	Email: hawk@nomandown.com
@@ -11,11 +11,11 @@
 */
 
 // Arguments
-_box 		= _this select 0;
+_crate 		= _this select 0;
 _amount 	= if (count _this > 1) then {_this select 1} else {30};
 
 // Create Array(s)
-_radios =	[
+_weapons = [
 "ACRE_PRC148",
 "ACE_PRC119",
 "ACE_PRC119_ACU",
@@ -23,9 +23,10 @@ _radios =	[
 ];
 
 // Clear Current Cargo
-clearWeaponCargoGlobal _box; 
-clearMagazineCargoGlobal _box;
+clearWeaponCargoGlobal _crate; 
+clearMagazineCargoGlobal _crate;
+clearBackpackCargoGlobal _crate;
 			
 // Add Cargo
-{ _box addWeaponCargoGlobal [_x, _amount]; }
-foreach _radios;
+{ _crate addWeaponCargoGlobal [_x, _amount]; }
+foreach _weapons;
