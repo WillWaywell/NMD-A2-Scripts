@@ -1,0 +1,1 @@
+<p>Crates contain both woodland and desert variants of weapons and items, edit accordingly.</p>
