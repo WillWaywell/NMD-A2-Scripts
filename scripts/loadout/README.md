@@ -1,0 +1,1 @@
+<p>Loadout scripts currently don't work with AI, will fix soon.</p>
