@@ -36,7 +36,7 @@ _unit addweapon "ItemWatch";
 _unit addweapon "NVGoggles";
 
 // Check for ACE Wounds
-if (ace_sys_wounds_enabled) then 
+if (!(isNil "ace_sys_wounds_enabled") && ace_sys_wounds_enabled) then 
 { 
 	[_unit, 2, 2, 2] call ACE_fnc_PackIFAK;
 	
