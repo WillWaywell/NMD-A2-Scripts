@@ -10,7 +10,7 @@
 + ----------------------------------------------------------------------------+
 */
 
-// Get/Set Variables
+// Arguments
 _crate 		= _this select 0;
 _amountw 	= if (count _this > 1) then {_this select 1} else {40};
 _amountm 	= if (count _this > 2) then {_this select 2} else {100};
@@ -345,7 +345,7 @@ _magazines_sb = [
 clearWeaponCargoGlobal _crate; 
 clearMagazineCargoGlobal _crate;
 			
-// Add Items
+// Add Cargo
 { _crate addWeaponCargoGlobal [_x, _amountw]; }
 foreach _weapons;
 
