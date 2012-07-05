@@ -269,7 +269,7 @@ switch (toUpper(_strType)) do
 		
 	case "SNIPER_LRR":
 	{
-	    _unit addWeapon "BAF_LRR_scoped";
+	    _unit addWeapon "BAF_LRR_scoped_W";
 		
 		{_unit addMagazine "5Rnd_86x70_L115A1";} forEach [1,2,3,4,5,6,7,8,9,10];
 		_unit addMagazine "SmokeShell";
