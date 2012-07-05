@@ -1,7 +1,7 @@
 /*
 + ----------------------------------------------------------------------------+
 |	File: ammocrate.sqf
-|	Script: if (isServer) then { null = [this,100,true] execVM "ammocrate.sqf"; };
+|	Init: if (isServer) then { null = [this,100,true] execVM "ammocrate.sqf"; };
 |	Args: <(object)crate> [(int)ammo count] [(bool)sb ammo]
 |
 |	Author: Hawk
