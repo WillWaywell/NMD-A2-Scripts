@@ -277,6 +277,19 @@ switch (toUpper(_strType)) do
 		_unit addweapon "ItemMap";
 		_unit addweapon "Binocular";
 	};
+	
+	case "PILOT":
+	{	
+		_unit addWeapon "BAF_L85A2_RIS_Holo";
+
+		{_unit addMagazine "ACE_30Rnd_556x45_T_Stanag";} forEach [1,2,3,4,5,6,7,8];
+		_unit addMagazine "SmokeShell";
+		_unit addMagazine "SmokeShellGreen";
+		_unit addMagazine "SmokeShellBlue";
+		_unit addMagazine "SmokeShellPurple";
+		
+		_unit addweapon "ItemMap";
+	};
 		
 	case "SNIPER_LRR":
 	{
@@ -325,6 +338,18 @@ switch (toUpper(_strType)) do
 		_unit addweapon "ACE_SpottingScope";
 		_unit addweapon "ACE_Kestrel4500";
 	};	
+	
+	default
+	{
+		_unit addWeapon "BAF_L85A2_RIS_SUSAT";
+		
+		{_unit addMagazine "ACE_30Rnd_556x45_T_Stanag";} forEach [1,2,3,4,5,6,7,8];
+		{_unit addMagazine "SmokeShell";} forEach [1,2];
+		{_unit addMagazine "BAF_L109A1_HE";} forEach [1,2];
+		
+		_unit addweapon "ItemMap";
+		_unit addweapon "Binocular";
+	};
 };
 
 _primaryWeapon = primaryWeapon _unit;
