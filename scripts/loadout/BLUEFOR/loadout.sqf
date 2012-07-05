@@ -10,18 +10,29 @@
 + ----------------------------------------------------------------------------+
 */
 
+// Arguments
 _unit = _this select 0;
 _strType = _this select 1;
 
-waitUntil {!isNull player};
-diag_log["NMD Loadout: player != null"];
+// Loadout Checks
 waitUntil {!isNull _unit};
-diag_log["NMD Loadout: _unit != null"];
-if (_unit != player) exitWith { diag_log["NMD Loadout: _unit != player"]; };
-waitUntil {local _unit};
-diag_log["NMD Loadout: _unit local - true"];
+
+if (isServer && isDedicated) then 
+{
+	_doExit = if (isPlayer(_unit)) then {true};
+};
+if(!isServer) then
+{
+	waitUntil {!isNull player};
+	_doExit = if (_unit != player) then {true};
+	waitUntil {local _unit};
+};
+if (_doExit) exitWith {};
+
 waitUntil {!isNil "ace_sys_ruck"}; waitUntil {ace_sys_ruck};
-diag_log["NMD Loadout: ace_sys_ruck loaded"];
+
+// Loadout Unit
+diag_log [format["NMD Loadout: %1", (name _unit)]];
 
 removeAllWeapons _unit;
 removeAllitems _unit;
