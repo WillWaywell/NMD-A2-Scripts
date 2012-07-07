@@ -14,12 +14,13 @@ if(!isServer) exitwith {};
 _id = _this select 0;
 _name = _this select 1;
 _uid = _this select 2;
-_unit = objnull;
+_unit = objNull;
 
-if(_name == (name player)) exitWith {}; // Exit if Dedicated server is 'player'
+if(_name == "__SERVER__") exitWith {}; // Exit if Dedicated server is 'player'
 
-{  if ((name _x) == _name) exitwith { _unit = _x }; } foreach allUnits;
-if ((isNull _unit)) exitWith { diag_log[format["NMD Revive: Unable to find unit for: %1 - %2", _name, _uid]]; };
-if (_unit call ace_sys_wounds_fnc_isUncon) exitWith {};
+{ if ((getPlayerUID _x) == _uid) exitwith { _unit = _x } } foreach playableUnits;
+if ((isNull _unit)) exitWith {  ["Unable to find unit for player (" + _name + " - " + _uid + ")", 1] call NMD_rev_fnc_createLog };
+if (!NMD_Rev_Persistent ||  !(_unit call ace_sys_wounds_fnc_isUncon)) exitWith {};
 
 call compile format ["NMD_Rev_Data%1 = [_unit] call NMD_rev_fnc_getPlayerData;", _uid];
+["Saved data for disconnected player (" + _name + " - " + _uid + ")", 0] call NMD_rev_fnc_createLog;

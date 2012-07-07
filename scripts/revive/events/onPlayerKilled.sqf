@@ -9,8 +9,6 @@
 + ----------------------------------------------------------------------------+
 */
 
-diag_log["Killed"];
-
 waituntil { alive player };
 
 player SetVariable ["ace_sys_spectator_exclude", true, true];

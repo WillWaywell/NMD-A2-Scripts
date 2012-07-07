@@ -10,9 +10,16 @@
 + ----------------------------------------------------------------------------+
 */
 
+waitUntil {!isNil "ace_sys_wounds"}; waitUntil {ace_sys_wounds};
 if ((isNil "ace_sys_wounds_enabled")) exitWith
 {
 	diag_log["NMD Revive: ACE Wounds is disabled!"];
+};
+
+if (!isDedicated) then 
+{
+	waitUntil { !isNull player };
+	waitUntil { local player };
 };
 
 NMD_Rev_Enabled = true;
@@ -25,9 +32,10 @@ ace_sys_wounds_noai = NMD_Rev_NoAI;
 player setVariable ["nmd_rev_lives", NMD_Rev_Lives];
 
 // Functions
-NMD_rev_fnc_getPlayerData 		= compile preprocessFileLineNumbers "revive\functions\getPlayerData.sqf";
-NMD_rev_fnc_setPlayerData 		= compile preprocessFileLineNumbers "revive\functions\setPlayerData.sqf";
-NMD_rev_fnc_setPlayerLoadout 	= compile preprocessFileLineNumbers "revive\functions\setPlayerLoadout.sqf";
+NMD_rev_fnc_createLog			= compile preprocessFileLineNumbers "revive\functions\createLog.sqf";
+NMD_rev_fnc_getPlayerData		= compile preprocessFileLineNumbers "revive\functions\getPlayerData.sqf";
+NMD_rev_fnc_setPlayerData		= compile preprocessFileLineNumbers "revive\functions\setPlayerData.sqf";
+NMD_rev_fnc_setPlayerLoadout	= compile preprocessFileLineNumbers "revive\functions\setPlayerLoadout.sqf";
 
 if (isServer) then 
 {
@@ -47,7 +55,6 @@ if (!isDedicated) then
 {
 	_pidDataVar = "NMD_Rev_Data"+ (getPlayerUID player);
 	if (isNil (_pidDataVar)) then {
-		diag_log["LOADOUT"];
 		[player] call NMD_rev_fnc_setPlayerLoadout;
 	}
 	else
@@ -56,7 +63,7 @@ if (!isDedicated) then
 	};
 };
 
-diag_log["NMD Revive: Initialized"];
+["Initialized", 0] call NMD_rev_fnc_createLog;
 //ace_w_cardiactime
 //ace_w_revive
 //NMD_Rev_Data6678854 = [[0,0,0], 2, ["BAF_L85A2_UGL_ACOG"], ["ACE_30Rnd_556x45_T_Stanag"], "BAF_L85A2_UGL_SUSAT"];

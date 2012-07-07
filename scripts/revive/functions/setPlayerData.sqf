@@ -30,7 +30,6 @@ if (_weaponOB != "") then { _unit addWeapon _weaponOB;  [_unit, _weaponOB] call 
 { _unit addWeapon _x; } foreach _weapons;
 { _unit addMagazine _x; } foreach _magazines;
 
-//player call ace_sys_wounds_fnc_isUncon;
 if (_uncons) then
 {
 	[_unit, 1] call ace_sys_wounds_fnc_addDamage;

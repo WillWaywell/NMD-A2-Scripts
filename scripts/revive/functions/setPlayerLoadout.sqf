@@ -20,7 +20,7 @@ if ([_unit] call ace_sys_wounds_fnc_isMedic) then {
 	};
 	
 	_unit addWeapon NMD_Rev_Ruck;
-	sleep 5; // Fix for ACE_fnc_RemoveGear bugging out >.<
+	sleep 5; // Wait so hopefully the ACE gear system updates correctly
 	[player, "BTH"] call ACE_fnc_RemoveGear;
 	[_unit, "ACE_LargeBandage", (NMD_Rev_RuckIFAK select 0)] call ACE_fnc_PackMagazine;
 	[_unit, "ACE_Bandage", (NMD_Rev_RuckIFAK select 1)] call ACE_fnc_PackMagazine;
@@ -30,5 +30,6 @@ if ([_unit] call ace_sys_wounds_fnc_isMedic) then {
 }
 else 
 {
-	[_unit, (NMD_Rev_IFAK select 0), 0, (NMD_Rev_IFAK select 1)] call ACE_fnc_PackIFAK;
+	sleep 5;
+	[_unit, (NMD_Rev_IFAK select 0), (NMD_Rev_IFAK select 1), (NMD_Rev_IFAK select 2), true] call ACE_fnc_PackIFAK;
 };
