@@ -24,9 +24,10 @@ switch (_type) do
 		BIS_AdvHints_TAction = "";
 		BIS_AdvHints_TBinds = "";
 		BIS_AdvHints_Text = call BIS_AdvHints_formatText;
-		BIS_AdvHints_Duration = 7;
+		BIS_AdvHints_Duration = 5;
 		BIS_AdvHints_Seamless = true;
 		BIS_AdvHints_Silent = true;
+		BIS_AdvHints_CanSkip = false;
 	};
 };
 

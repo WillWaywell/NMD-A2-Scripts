@@ -8,7 +8,7 @@
 |	Website: www.nomandown.com
 + ----------------------------------------------------------------------------+
 */
-["KILLED", 0] call NMD_rev_fnc_createLog;
+
 ace_sys_spectator_exit_spectator = true;
 ace_sys_spectator_ShownSides = nil;
 ace_sys_spectator_maxDistance = nil;
