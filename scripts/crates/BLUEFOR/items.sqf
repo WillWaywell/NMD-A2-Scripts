@@ -18,6 +18,7 @@ _amount 	= if (count _this > 1) then {_this select 1} else {40};
 _weapons = [
 "ACE_Kestrel4500",
 "ACE_DAGR",
+"ACE_MAP",
 "ACE_Map_Tools",
 "ACE_KeyCuffs",
 "ACE_SpottingScope",
