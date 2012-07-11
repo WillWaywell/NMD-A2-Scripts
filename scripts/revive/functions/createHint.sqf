@@ -12,7 +12,6 @@
 
 _type = _this select 0;
 
-[] call bis_fnc_hints;
 BIS_AdvHints_setDefaults;
 BIS_AdvHints_THeader =  "=NMD= ACE Revive";
 
@@ -29,6 +28,10 @@ switch (_type) do
 		BIS_AdvHints_Silent = true;
 		BIS_AdvHints_CanSkip = false;
 	};
+	case 1: 
+	{
+		format["%1 was wounded", (_this select 1)] call CBA_fnc_systemChat;
+	}
 };
 
 [] spawn { call BIS_AdvHints_showHint; };

@@ -2,7 +2,7 @@
 + ----------------------------------------------------------------------------+
 |	Script: NMD ACE Revive
 |	File: revive.sqf
-|	Init: execVM "revive\revive.sqf";
+|	Init: execVM "scripts\revive\revive.sqf";
 |
 |	Author: Hawk
 |	Email: hawk@nomandown.com
@@ -19,11 +19,12 @@ if ((isNil "ace_sys_wounds_enabled")) exitWith
 NMD_Rev_Enabled = true;
 diag_log["NMD Revive: Initializing..."];
 
-call compile preprocessFileLineNumbers 'revive\config.sqf';
+call compile preprocessFileLineNumbers 'scripts\revive\config.sqf';
+[] call bis_fnc_hints;
 ace_wounds_prevtime = NMD_Rev_Time;
 ace_sys_wounds_withSpect = NMD_Rev_Spectator;
 ace_sys_wounds_noai = NMD_Rev_NoAI;
-ace_sys_wounds_no_medical_gear = true;
+ace_sys_wounds_no_rpunish = true;
 
 if (!isDedicated) then 
 {
@@ -33,21 +34,22 @@ if (!isDedicated) then
 };
 
 // Functions
-NMD_rev_fnc_createLog			= compile preprocessFileLineNumbers "revive\functions\createLog.sqf";
-NMD_rev_fnc_createHint			= compile preprocessFileLineNumbers "revive\functions\createHint.sqf";
-NMD_rev_fnc_getPlayerData		= compile preprocessFileLineNumbers "revive\functions\getPlayerData.sqf";
-NMD_rev_fnc_setPlayerData		= compile preprocessFileLineNumbers "revive\functions\setPlayerData.sqf";
-NMD_rev_fnc_setPlayerLoadout	= compile preprocessFileLineNumbers "revive\functions\setPlayerLoadout.sqf";
+NMD_rev_fnc_createLog			= compile preprocessFileLineNumbers "scripts\revive\functions\createLog.sqf";
+NMD_rev_fnc_createHint			= compile preprocessFileLineNumbers "scripts\revive\functions\createHint.sqf";
+NMD_rev_fnc_getPlayerData		= compile preprocessFileLineNumbers "scripts\revive\functions\getPlayerData.sqf";
+NMD_rev_fnc_setPlayerData		= compile preprocessFileLineNumbers "scripts\revive\functions\setPlayerData.sqf";
+NMD_rev_fnc_setPlayerLoadout	= compile preprocessFileLineNumbers "scripts\revive\functions\setPlayerLoadout.sqf";
 
 if (isServer) then 
 {
-	onPlayerConnected "[_id, _name, _uid] execVM ""revive\events\onPlayerConnected.sqf""";
-	onPlayerDisconnected "[_id, _name, _uid] execVM ""revive\events\onPlayerDisconnected.sqf""";
+	ace_sys_wounds_no_medical_gear = true;
+	onPlayerConnected "[_id, _name, _uid] execVM ""scripts\revive\events\onPlayerConnected.sqf""";
+	onPlayerDisconnected "[_id, _name, _uid] execVM ""scripts\revive\events\onPlayerDisconnected.sqf""";
 };
 
 // Events
-NMD_rev_fnc_onPlayerWounded = compile preprocessFileLineNumbers "revive\events\onPlayerWounded.sqf";
-NMD_rev_fnc_onPlayerKilled = compile preprocessFileLineNumbers "revive\events\onPlayerKilled.sqf";
+NMD_rev_fnc_onPlayerWounded = compile preprocessFileLineNumbers "scripts\revive\events\onPlayerWounded.sqf";
+NMD_rev_fnc_onPlayerKilled = compile preprocessFileLineNumbers "scripts\revive\events\onPlayerKilled.sqf";
 
 // CBA Events
 ["ace_sys_wounds_rev", { player spawn NMD_rev_fnc_onPlayerWounded }] call CBA_fnc_addEventhandler;
@@ -55,8 +57,6 @@ NMD_rev_fnc_onPlayerKilled = compile preprocessFileLineNumbers "revive\events\on
 
 if (!isDedicated) then
 {
-	//NMD_Rev_Data6678854 = [[1000,1000,0], [false], -1, ["BAF_L85A2_UGL_ACOG"], ["ACE_30Rnd_556x45_T_Stanag"], "BAF_L85A2_UGL_SUSAT"];
-	
 	_pidDataVar = "NMD_Rev_Data"+ (getPlayerUID player);
 	if (isNil (_pidDataVar)) then {
 		[player] call NMD_rev_fnc_setPlayerLoadout;
@@ -80,5 +80,3 @@ else
 {
 	[0] call NMD_rev_fnc_createHint;
 };
-//ace_w_cardiactime
-//ace_w_revive
