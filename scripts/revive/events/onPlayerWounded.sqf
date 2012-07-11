@@ -17,7 +17,6 @@ if ((player getVariable "nmd_rev_lives") < 0) exitWith
 	player setVariable ["ace_w_revive", 0];
 };
 
-['nmd_rev_hint', [1, name player]] call CBA_fnc_globalEvent;
 [-1, { [1, _this] call NMD_rev_fnc_createHint }, (name player)] call CBA_fnc_globalExecute;
 
 if (NMD_Rev_Markers) then 
