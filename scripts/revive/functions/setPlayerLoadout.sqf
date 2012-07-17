@@ -13,7 +13,7 @@
 _unit = _this select 0;
 
 if ([_unit] call ace_sys_wounds_fnc_isMedic) then {
-	if (NMD_Rev_Ruck != "") then
+	if (NMD_Rev_Medic_Ruck != "") then
 	{
 		if (!isNull (unitBackpack _unit)) then { removeBackpack _unit }; 
 		if ([_unit] call ACE_fnc_HasRuck) then 
@@ -21,7 +21,7 @@ if ([_unit] call ace_sys_wounds_fnc_isMedic) then {
 			_unit removeWeapon ([_unit] call ACE_fnc_FindRuck);
 		};
 		
-		_unit addWeapon NMD_Rev_Ruck;
+		_unit addWeapon NMD_Rev_Medic_Ruck;
 		[player, "BTH"] call ACE_fnc_RemoveGear;
 		[_unit, "ACE_LargeBandage", (NMD_Rev_Medic_Ruck_IFAK select 0)] call ACE_fnc_PackMagazine;
 		[_unit, "ACE_Bandage", (NMD_Rev_Medic_Ruck_IFAK select 1)] call ACE_fnc_PackMagazine;
