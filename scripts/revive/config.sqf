@@ -10,7 +10,7 @@
 */
 
 if (isNil "NMD_Rev_Time")				then {		NMD_Rev_Time = 600 								};
-if (isNil "NMD_Rev_Lives")				then {		NMD_Rev_Lives = 0								};
+if (isNil "NMD_Rev_Lives")				then {		NMD_Rev_Lives = 5								};
 if (isNil "NMD_Rev_Spectator")			then {		NMD_Rev_Spectator = true						};
 if (isNil "NMD_Rev_IFAK")				then {		NMD_Rev_IFAK = [0,2,0]							};
 if (isNil "NMD_Rev_Medic_IFAK")			then {		NMD_Rev_Medic_IFAK = [2,2,2]					};

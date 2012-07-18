@@ -9,6 +9,8 @@
 + ----------------------------------------------------------------------------+
 */
 
+private ["_lives","_marker","_markerID"];
+
 _lives = (player getVariable "nmd_rev_lives") - 1;
 player setVariable ["nmd_rev_lives", _lives, true];
 
@@ -21,18 +23,24 @@ if ((player getVariable "nmd_rev_lives") < 0) exitWith
 
 if (NMD_Rev_Markers) then 
 {
-	_marker = createMarker [format["nmd_revive_wounded_%1", name player], getPos player];
+	_markerID = format["nmd_revive_wounded_%1", name player];
+	_marker = createMarker [_markerID, getPos player];
 	_marker setMarkerShape "ICON";
 	_marker setMarkerType "hd_flag";
 	_marker setMarkerText format["%1 is wounded", name player];
 	_marker setMarkerColor "ColorRed";
-};
 
-waitUntil { (player getVariable "ace_w_revive") <= 0 };
-
-if (NMD_Rev_Markers) then 
+	while { (player getVariable "ace_w_revive") > 0 } do 
+	{
+		_markerID setMarkerPos (getPos player);
+		sleep 1;
+	};
+	
+	deleteMarker _markerID;
+}
+else
 {
-	deleteMarker format["nmd_revive_wounded_%1", name player];
+	waitUntil { (player getVariable "ace_w_revive") <= 0 };
 };
 
 if (alive player) then

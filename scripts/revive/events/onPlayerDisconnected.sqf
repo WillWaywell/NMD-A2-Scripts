@@ -18,6 +18,8 @@ _unit = objNull;
 
 if(_name == "__SERVER__") exitWith {}; // Exit if Dedicated server is 'player'
 
+deleteMarker "nmd_revive_wounded_" + _name;
+
 { if ((getPlayerUID _x) == _uid) exitwith { _unit = _x } } foreach playableUnits;
 if ((isNull _unit)) exitWith {  ["Unable to find unit for player (" + _name + " - " + _uid + ")", 1] call NMD_rev_fnc_createLog };
 if (!NMD_Rev_Persistent ||  !(_unit call ace_sys_wounds_fnc_isUncon)) exitWith {};

@@ -25,6 +25,7 @@ ace_wounds_prevtime = NMD_Rev_Time;
 ace_sys_wounds_withSpect = NMD_Rev_Spectator;
 ace_sys_wounds_noai = NMD_Rev_NoAI;
 ace_sys_wounds_no_rpunish = true;
+ace_sys_wounds_no_medical_gear = true;
 
 if (!isDedicated) then 
 {
@@ -42,7 +43,6 @@ NMD_rev_fnc_setPlayerLoadout	= compile preprocessFileLineNumbers "scripts\revive
 
 if (isServer) then 
 {
-	ace_sys_wounds_no_medical_gear = true;
 	onPlayerConnected "[_id, _name, _uid] execVM ""scripts\revive\events\onPlayerConnected.sqf""";
 	onPlayerDisconnected "[_id, _name, _uid] execVM ""scripts\revive\events\onPlayerDisconnected.sqf""";
 };
