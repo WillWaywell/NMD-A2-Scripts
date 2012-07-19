@@ -251,7 +251,7 @@ _magazines = [
 "200Rnd_556x45_M249",
 "ACE_100Rnd_556x45_T_M249", 
 "ACE_200Rnd_556x45_T_M249", 
-"30Rnd_556x45_StanagSD", 
+"ACE_30Rnd_556x45_S_Stanag", 
 "30Rnd_556x45_Stanag", 
 "ACE_30Rnd_556x45_T_Stanag",
 "30Rnd_556x45_G36", 
