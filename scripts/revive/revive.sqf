@@ -43,8 +43,8 @@ NMD_rev_fnc_setPlayerLoadout	= compile preprocessFileLineNumbers "scripts\revive
 
 if (isServer) then 
 {
-	onPlayerConnected "[_id, _name, _uid] execVM ""scripts\revive\events\onPlayerConnected.sqf""";
-	onPlayerDisconnected "[_id, _name, _uid] execVM ""scripts\revive\events\onPlayerDisconnected.sqf""";
+	onPlayerConnected "[_id, _name, _uid] call compile preprocessfilelinenumbers ""scripts\revive\events\onPlayerConnected.sqf""";
+	onPlayerDisconnected "[_id, _name, _uid] call compile preprocessfilelinenumbers ""scripts\revive\events\onPlayerDisconnected.sqf""";
 };
 
 // Events
@@ -58,11 +58,14 @@ NMD_rev_fnc_onPlayerKilled = compile preprocessFileLineNumbers "scripts\revive\e
 if (!isDedicated) then
 {
 	_pidDataVar = "NMD_Rev_Data"+ (getPlayerUID player);
+	//diag_log[format["%1", call compile _pidDataVar]];
 	if (isNil (_pidDataVar)) then {
+		["NO PUBVAR", 0] call NMD_rev_fnc_createLog;
 		[player] call NMD_rev_fnc_setPlayerLoadout;
 	}
 	else
 	{
+		["PUBVAR DETECTED (POTATOE)", 0] call NMD_rev_fnc_createLog;
 		[player, call compile _pidDataVar] call NMD_rev_fnc_setPlayerData;
 	};
 	

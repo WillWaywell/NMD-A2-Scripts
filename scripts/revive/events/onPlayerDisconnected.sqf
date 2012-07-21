@@ -9,8 +9,6 @@
 + ----------------------------------------------------------------------------+
 */
 
-if(!isServer) exitwith {};
-
 _id = _this select 0;
 _name = _this select 1;
 _uid = _this select 2;
