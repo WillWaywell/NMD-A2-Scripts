@@ -49,7 +49,7 @@ _unit addweapon "NVGoggles";
 // Check for ACE Wounds
 if (!(isNil "ace_sys_wounds_enabled") && ace_sys_wounds_enabled) then 
 { 
-	[_unit, 2, 2, 2] call ACE_fnc_PackIFAK;
+	[_unit, 1, 1, 1] call ACE_fnc_PackIFAK;
 	
 	if (_strType == "MEDIC") then 
 	{ 
@@ -280,15 +280,15 @@ switch (toUpper(_strType)) do
 	
 	case "PILOT":
 	{	
-		_unit addWeapon "BAF_L85A2_RIS_Holo";
+		_unit addWeapon "ACE_MP5A5";
 
-		{_unit addMagazine "ACE_30Rnd_556x45_T_Stanag";} forEach [1,2,3,4,5,6,7,8];
+		{_unit addMagazine "30Rnd_9x19_MP5";} forEach [1,2,3,4,5,6];
 		_unit addMagazine "SmokeShell";
 		_unit addMagazine "SmokeShellGreen";
 		_unit addMagazine "SmokeShellBlue";
 		_unit addMagazine "SmokeShellPurple";
 		
-		_unit addweapon "ItemMap";
+		_unit addweapon "ACE_Map";
 	};
 		
 	case "SNIPER_LRR":
@@ -299,8 +299,8 @@ switch (toUpper(_strType)) do
 		_unit addMagazine "SmokeShell";
 		_unit addMagazine "SmokeShellOrange";
 		
-		_unit addWeapon "ACE_L9A1";
-		{_unit addMagazine "ACE_13Rnd_9x19_L9A1";} forEach [1,2,3,4];
+		_unit addWeapon "glock17_EP1";
+		{_unit addMagazine "17Rnd_9x19_glock17";} forEach [1,2,3,4];
 		
 		_unit addweapon "ItemMap";
 		_unit addweapon "Binocular_Vector";
@@ -311,17 +311,34 @@ switch (toUpper(_strType)) do
 	{
 	    _unit addWeapon "BAF_AS50_scoped";
 		
-		{_unit addMagazine "10Rnd_127x99_m107";} forEach [1,2,3,4,5,6];
+		{_unit addMagazine "5Rnd_127x99_as50";} forEach [1,2,3,4,5,6];
 		_unit addMagazine "SmokeShell";
 		_unit addMagazine "SmokeShellOrange";
 		
-		_unit addWeapon "ACE_L9A1";
-		{_unit addMagazine "ACE_13Rnd_9x19_L9A1";} forEach [1,2,3,4];
+		_unit addWeapon "glock17_EP1";
+		{_unit addMagazine "17Rnd_9x19_glock17";} forEach [1,2,3,4];
 		
 		_unit addweapon "ItemMap";
 		_unit addweapon "Binocular_Vector";
 		_unit addweapon "ACE_GlassesBalaklavaOlive";
 	};	
+	
+	case "SNIPER_TAC50":
+	{
+	    _unit addWeapon "ACE_TAC50";
+		
+		{_unit addMagazine "ACE_5Rnd_127x99_B_TAC50";} forEach [1,2,3,4,5,6];
+		_unit addMagazine "SmokeShell";
+		_unit addMagazine "SmokeShellOrange";
+		
+		_unit addWeapon "glock17_EP1";
+		{_unit addMagazine "17Rnd_9x19_glock17";} forEach [1,2,3,4];
+		
+		_unit addweapon "ItemMap";
+		_unit addweapon "Binocular_Vector";
+		_unit addweapon "ACE_GlassesBalaklavaOlive";
+	};	
+	
 	
 	case "SPOTTER":
 	{
@@ -337,6 +354,8 @@ switch (toUpper(_strType)) do
 		_unit addweapon "Binocular_Vector";
 		_unit addweapon "ACE_SpottingScope";
 		_unit addweapon "ACE_Kestrel4500";
+		_unit addWeapon "ACE_SSVZ";
+		_unit addWeapon "ACE_SniperTripod";
 	};	
 	
 	default

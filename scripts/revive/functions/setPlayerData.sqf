@@ -24,7 +24,6 @@ removeAllWeapons _unit;
 removeAllitems _unit;
 removeBackpack _unit;
 
-_unit setPos _pos;
 _unit setVariable ["nmd_rev_lives", _lives];
 if (_weaponOB != "") then { _unit addWeapon _weaponOB;  [_unit, _weaponOB] call ACE_fnc_PutWeaponOnBack; };
 { _unit addWeapon _x; } foreach _weapons;
@@ -32,5 +31,6 @@ if (_weaponOB != "") then { _unit addWeapon _weaponOB;  [_unit, _weaponOB] call 
 
 if (_uncons) then
 {
+	_unit setPos _pos;
 	[_unit, 1] call ace_sys_wounds_fnc_addDamage;
 };

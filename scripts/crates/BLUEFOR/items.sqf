@@ -40,7 +40,9 @@ _weapons = [
 "ACE_GlassesGreenSun",
 "ACE_GlassesBlackSun",
 "ACE_GlassesBlueSun",
-"ACE_GlassesGasMask_US"
+"ACE_GlassesGasMask_US",
+"ACE_SniperTripod",
+"ACE_SSVZ"
 ];
 
 _magazines = [
