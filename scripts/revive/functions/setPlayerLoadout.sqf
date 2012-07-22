@@ -12,6 +12,11 @@
 
 _unit = _this select 0;
 
+if ((count NMD_Rev_IFAK) == 3) then 
+{
+	[_unit, (NMD_Rev_IFAK select 0), (NMD_Rev_IFAK select 1), (NMD_Rev_IFAK select 2), true] call ACE_fnc_PackIFAK;
+};
+
 if ([_unit] call ace_sys_wounds_fnc_isMedic) then {
 	if (NMD_Rev_Medic_Ruck != "") then
 	{
@@ -28,16 +33,6 @@ if ([_unit] call ace_sys_wounds_fnc_isMedic) then {
 		[_unit, "ACE_Morphine", (NMD_Rev_Medic_Ruck_IFAK select 2)] call ACE_fnc_PackMagazine;
 		[_unit, "ACE_Epinephrine", (NMD_Rev_Medic_Ruck_IFAK select 3)] call ACE_fnc_PackMagazine;
 		[_unit, "ACE_Medkit", (NMD_Rev_Medic_Ruck_IFAK select 4)] call ACE_fnc_PackMagazine;
-	};
-	if ((count NMD_Rev_Medic_IFAK) == 3) then 
-	{
-		[_unit, (NMD_Rev_Medic_IFAK select 0), (NMD_Rev_Medic_IFAK select 1), (NMD_Rev_Medic_IFAK select 2), true] call ACE_fnc_PackIFAK;
-	};
-}
-else 
-{
-	if ((count NMD_Rev_IFAK) == 3) then 
-	{
-		[_unit, (NMD_Rev_IFAK select 0), (NMD_Rev_IFAK select 1), (NMD_Rev_IFAK select 2), true] call ACE_fnc_PackIFAK;
+		[_unit, "ACE_Tourniquet", (NMD_Rev_Medic_Ruck_IFAK select 5)] call ACE_fnc_PackMagazine;
 	};
 };
