@@ -21,8 +21,11 @@ diag_log["NMD Revive: Initializing..."];
 
 call compile preprocessFileLineNumbers 'scripts\revive\config.sqf';
 [] call bis_fnc_hints;
-ace_wounds_prevtime = NMD_Rev_Time;
-ace_sys_wounds_withSpect = NMD_Rev_Spectator;
+if (NMD_Rev_Spectator) then 
+{
+	ace_sys_wounds_withSpect = NMD_Rev_Spectator;
+	ace_wounds_prevtime = NMD_Rev_Time;
+};
 ace_sys_wounds_noai = NMD_Rev_NoAI;
 ace_sys_wounds_no_rpunish = true;
 ace_sys_wounds_no_medical_gear = true;
