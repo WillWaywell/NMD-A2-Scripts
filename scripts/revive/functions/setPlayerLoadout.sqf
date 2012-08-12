@@ -4,8 +4,8 @@
 |	File: setPlayerLoadout.sqf
 |	Args: <(object)unit>
 |
-|	Author: Hawk
-|	Email: hawk@nomandown.com
+|	Author: Nimrod
+|	Email: nimrod@nomandown.com
 |	Website: www.nomandown.com
 + ----------------------------------------------------------------------------+
 */

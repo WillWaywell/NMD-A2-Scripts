@@ -4,8 +4,8 @@
 |	File: createHint.sqf
 |	Args: <(int)type> [(any)args]
 |
-|	Author: Hawk
-|	Email: hawk@nomandown.com
+|	Author: Nimrod
+|	Email: nimrod@nomandown.com
 |	Website: www.nomandown.com
 + ----------------------------------------------------------------------------+
 */

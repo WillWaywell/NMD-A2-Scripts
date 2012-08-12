@@ -4,8 +4,8 @@
 |	File: createLog.sqf
 |	Args: <(any)anything> <(int)type>
 |
-|	Author: Hawk
-|	Email: hawk@nomandown.com
+|	Author: Nimrod
+|	Email: nimrod@nomandown.com
 |	Website: www.nomandown.com
 + ----------------------------------------------------------------------------+
 */

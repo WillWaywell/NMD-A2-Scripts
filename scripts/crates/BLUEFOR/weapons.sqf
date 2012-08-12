@@ -4,8 +4,8 @@
 |	Init: if (isServer) then { null = [this,40,100,true] execVM "weapons.sqf"; };
 |	Args: <(object)crate> [(int)weapon count] [(int)ammo count] [(bool)sb ammo]
 |
-|	Author: Hawk
-|	Email: hawk@nomandown.com
+|	Author: Nimrod
+|	Email: nimrod@nomandown.com
 |	Website: www.nomandown.com
 + ----------------------------------------------------------------------------+
 */

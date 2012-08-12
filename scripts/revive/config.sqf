@@ -3,8 +3,8 @@
 |	Script: NMD ACE Revive
 |	File: config.sqf
 |
-|	Author: Hawk
-|	Email: hawk@nomandown.com
+|	Author: Nimrod
+|	Email: nimrod@nomandown.com
 |	Website: www.nomandown.com
 + ----------------------------------------------------------------------------+
 */

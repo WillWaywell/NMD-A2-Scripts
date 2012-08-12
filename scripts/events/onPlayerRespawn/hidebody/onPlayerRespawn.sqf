@@ -4,8 +4,8 @@
 |	Init: this addMPEventHandler ["MPRespawn", {Null = _this execVM "playerRespawn.sqf";}];
 |	Args: <(object)unit> <(object)corpse>
 |
-|	Author: Hawk
-|	Email: hawk@nomandown.com
+|	Author: Nimrod
+|	Email: nimrod@nomandown.com
 |	Website: www.nomandown.com
 + ----------------------------------------------------------------------------+
 */

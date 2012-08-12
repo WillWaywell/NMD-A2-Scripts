@@ -4,8 +4,8 @@
 |	Init: if (isServer) then { null = [this,40] execVM "items.sqf"; };
 |	Args: <(object)crate> [(int)item count]
 |
-|	Author: Hawk
-|	Email: hawk@nomandown.com
+|	Author: Nimrod
+|	Email: nimrod@nomandown.com
 |	Website: www.nomandown.com
 + ----------------------------------------------------------------------------+
 */

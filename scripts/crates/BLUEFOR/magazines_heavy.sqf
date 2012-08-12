@@ -4,8 +4,8 @@
 |	Script: if (isServer) then { null = [this,2,8] execVM "magazines_heavy.sqf"; };
 |	Args: <(object)crate> [(int)weapon count] [(int)ammo count]
 |
-|	Author: Hawk
-|	Email: hawk@nomandown.com
+|	Author: Nimrod
+|	Email: nimrod@nomandown.com
 |	Website: www.nomandown.com
 + ----------------------------------------------------------------------------+
 */

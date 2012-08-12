@@ -4,8 +4,8 @@
 |	Init: if (isServer) then { null = [this,30] execVM "radios.sqf"; };
 |	Args: <(object)crate> [(int)weapon count]
 |
-|	Author: Hawk
-|	Email: hawk@nomandown.com
+|	Author: Nimrod
+|	Email: nimrod@nomandown.com
 |	Website: www.nomandown.com
 + ----------------------------------------------------------------------------+
 */

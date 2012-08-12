@@ -4,8 +4,8 @@
 |	File: revive.sqf
 |	Init: execVM "scripts\revive\revive.sqf";
 |
-|	Author: Hawk
-|	Email: hawk@nomandown.com
+|	Author: Nimrod
+|	Email: nimrod@nomandown.com
 |	Website: www.nomandown.com
 + ----------------------------------------------------------------------------+
 */

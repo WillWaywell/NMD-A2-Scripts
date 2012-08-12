@@ -4,8 +4,8 @@
 |	Init: if (isServer) then { null = [this,10,40] execVM "ordnance.sqf"; };
 |	Args: <(object)crate> [(int)weapon count] [(int)ammo count]
 |
-|	Author: Hawk
-|	Email: hawk@nomandown.com
+|	Author: Nimrod
+|	Email: nimrod@nomandown.com
 |	Website: www.nomandown.com
 + ----------------------------------------------------------------------------+
 */
